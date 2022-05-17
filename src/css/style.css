@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+
+body {
+    font-family: 'Rancho';
+    background-color: var(--cor-secundaria);
+}
+
+body::before {
+    content: '';
+    background-image: url("../imagens/giphy (1).gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+}
+
+main {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cabecalho{
+    z-index: 1;
+
+    display: flex;
+    justify-content: center;
+}
+
+.cabecalho .titulo {
+    color: var(--cor-titulo-fraco);
+    text-transform: uppercase;
+    font-size: 3.8rem;
+    line-height: 10.2rem;
+    -webkit-text-stroke: 0.1rem var(--cor-vermelha-media);
+}
+
+.selecao__personagens {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.selecao__personagens .personagem__grande {
+    text-align: center;
+
+    width: 30%;
+    height: 70vh;
+
+    position: relative;
+}
+
+.selecao__personagens .personagem__grande img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+.selecao__personagens .personagem__grande .nome::before {
+    /*pseudo elemento | somente estilo*/
+    content: '';
+    height: 15px;
+    width: 100%;
+
+    position: absolute;
+    bottom: -15px;
+    left: 0; 
+}
+
+.selecao__personagens .personagem__grande .nome h2 {
+    color: var(--cor-padrao);
+    font-family: 'command', sans-serif;
+    font-size: 27px;
+
+    position: absolute;
+    bottom: -15px;
+    width: 100%;
+
+}
+
+.selecao__personagens .personagem__grande.personagem__jogador-1 .nome::before {
+    background-color: var(--cor-vermelha-media);
+}
+
+.selecao__personagens .personagem__grande.personagem__jogador-2 .nome::before {
+    background-color: var(--cor-vermelha-fraca);
+}
+
+.selecao__personagens .lista__personagens {
+
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 600px;
+    justify-content: center;
+    gap: 12px;
+
+}
+
+.selecao__personagens .lista__personagens .personagem {
+
+    border: 2px solid var(--cor-padrao);
+    border-radius: 5px;
+    background-color: var(--cor-padrao);
+
+    width: 30%;
+    height: 160px;
+
+    cursor: pointer;
+
+    z-index: 2;
+
+    position: relative;
+    transition: 0.1s ease-in-out;
+
+}
+
+.selecao__personagens .lista__personagens .personagem img {
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 5px;
+
+}
+
+.selecao__personagens .lista__personagens .personagem.selecionado {
+
+    border: 2px solid var(--cor-azul-media);
+
+    animation: c-glowing-blue .3s ease-in-out infinite;/**/
+    animation-direction: alternate;
+}
+
+.selecao__personagens .lista__personagens .personagem:hover {
+    animation: c-glowing-blue .3s ease-in-out infinite;
+    animation-direction: alternate;
+
+    transform: scale(1.07); /*aumenta*/
+    z-index: 2; /*ficar sempre por cima de tudo*/
+
+}
+
+.selecao__personagens .lista__personagens .personagem.jogador__2-selecionado {
+
+    border: 2px solid var(--cor-azul-media);
+
+    animation: c-glowing-red .3s ease-in-out infinite;/**/
+    animation-direction: alternate;
+}
+
+.selecao__personagens .lista__personagens .personagem.jogador__2-selecionado:hover {
+    animation: c-glowing-red .3s ease-in-out infinite;
+    animation-direction: alternate;
+}
+
+.selecao__personagens .lista__personagens .personagem .tag {
+    display: none;
+    font-family: 'Times New Roman', Times, serif;
+    color: var(--cor-azul-media);
+
+    position: absolute;
+    top: 5px; 
+    left: 5px;
+
+    transition: opacity .3 ease-in-out;
+    animation: alternate;
+    animation: text-glowing-blue .3s ease-in-out infinite;
+    animation-direction: alternate;
+
+}
+
+.selecao__personagens .lista__personagens .personagem.selecionado .tag {
+    display: block;
+
+    animation: text-glowing-red .3s ease-in-out infinite;
+    animation-direction: alternate;
+}
+
+.selecao__personagens .lista__personagens .personagem.jogador__2-selecionado  .tag {
+    display: block;
+
+    animation: text-glowing-red .3s ease-in-out infinite;
+    animation-direction: alternate;
+}
