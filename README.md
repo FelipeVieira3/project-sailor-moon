@@ -4,7 +4,8 @@
 
 ```
 Projeto realizado com o auxílio do canal dos gêmeos DEV em Dobro. 
-O objetivo ao participar das lives foi aprimorar ainda mais meus conhecimentos na utilização da DOM API, e também da linguagem JS em si.
+O objetivo ao participar das lives foi aprimorar ainda mais meus conhecimentos na utilização da DOM API, 
+e também da linguagem JS em si.
 Na construção do projeto, foram utilizadas: HTML, CSS, JS (DOM API).
 ```
 
